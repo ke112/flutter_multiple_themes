@@ -5,15 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_multiple_themes",
+            "name": "flutter_multiple_themes for app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "flutterMode": "debug",
+        },
+        {
+            "name": "flutter_multiple_themes for web (CanvasKit + Fast Reload)", // 名字可以更新一下，方便区分
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "deviceId": "chrome",
+            "toolArgs": [
+                // "--wasm",
+                // "canvaskit",
+                "--dart-define=flutter.web.canvaskit.enableOptimizations=true",
+                "--web-experimental-hot-reload"
+            ]
         },
         {
             "name": "flutter_multiple_themes for web ",
             "request": "launch",
             "type": "dart",
-            "args": [
+            "flutterMode": "debug",
+            "deviceId": "chrome",
+            "toolArgs": [
                 "--web-experimental-hot-reload"
             ]
         },

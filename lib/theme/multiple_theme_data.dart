@@ -78,7 +78,7 @@ class MultipleThemeManager {
     // 绿色主题
     MultipleThemeData(
       id: 'green',
-      icon: 'assets/svg/color_theme_dark.svg',
+      icon: 'assets/svg/color_theme_light.svg',
       description: '清新自然的绿色主题',
       colors: MultipleThemeExtension.green,
       themeData: _createThemeData(MultipleThemeExtension.green, false),
@@ -88,7 +88,7 @@ class MultipleThemeManager {
     // 红色主题
     MultipleThemeData(
       id: 'red',
-      icon: 'assets/svg/color_theme_dark.svg',
+      icon: 'assets/svg/color_theme_light.svg',
       description: '热情活力的红色主题',
       colors: MultipleThemeExtension.red,
       themeData: _createThemeData(MultipleThemeExtension.red, false),
@@ -98,7 +98,7 @@ class MultipleThemeManager {
     // 紫色主题
     MultipleThemeData(
       id: 'purple',
-      icon: 'assets/svg/color_theme_dark.svg',
+      icon: 'assets/svg/color_theme_light.svg',
       description: '神秘优雅的紫色主题',
       colors: MultipleThemeExtension.purple,
       themeData: _createThemeData(MultipleThemeExtension.purple, false),
