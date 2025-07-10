@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: NavigatorProvider.navigatorKey,
           theme: themeData,
           home: _wrapWithSafeArea(
-            child: const MyHomePage(title: 'Flutter Demo Home Page'),
+            child: const MyHomePage(),
           ),
         );
       },
@@ -49,18 +48,32 @@ class MyApp extends StatelessWidget {
 
   /// 根据平台包装SafeArea
   Widget _wrapWithSafeArea({required Widget child}) {
-    return Platform.isAndroid
-        ? SafeArea(
-            top: false, // 保持状态栏透明效果
-            bottom: true, // 避免内容被虚拟导航栏遮挡
-            child: child,
-          )
-        : child;
+    // Web平台不需要特殊的SafeArea处理
+    if (kIsWeb) {
+      return child;
+    }
+
+    // 在移动平台上检查是否为Android
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return SafeArea(
+        top: false, // 保持状态栏透明效果
+        bottom: true, // 避免内容被虚拟导航栏遮挡
+        child: child,
+      );
+    }
+
+    return child;
   }
 
   /// 配置系统UI覆盖层样式（状态栏、导航栏等）
   void _configureSystemUIOverlay(bool isDarkMode) {
-    if (Platform.isAndroid) {
+    // Web平台不支持系统UI配置
+    if (kIsWeb) {
+      return;
+    }
+
+    // 只在Android平台配置系统UI
+    if (defaultTargetPlatform == TargetPlatform.android) {
       // 设置边到边模式，内容延伸到系统栏下方
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       // 设置状态栏和导航栏透明

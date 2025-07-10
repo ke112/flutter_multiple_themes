@@ -4,8 +4,7 @@ import 'package:flutter_multiple_themes/theme/multiple_theme_color.dart';
 import 'color_theme_page.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -30,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: ThemeColor.backgroundMain2,
         title: Text(
-          widget.title,
+          'flutter_multiple_themes',
           style: TextStyle(
             color: ThemeColor.textIcon1,
             fontSize: 16,
