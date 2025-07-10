@@ -51,7 +51,7 @@ class ColorThemePage extends StatelessWidget {
               '''
 如果只有跟随系统、浅色模式、暗色模式需求, 直接 MultipleThemeManager.availableThemes 保留 .system .light .dark 三个主题即可
 
-绿色、红色、紫色主题为copy的浅色模式, 本方案支持多主题需求,自行修改 MultipleThemeExtension 下的 .green .red .purple 属性即可
+绿色、红色、紫色主题为copy的浅色模式, 本方案支持多主题需求,自行修改 MultipleThemeExtension 下的 .green .red .purple 映射的每个颜色值即可
               '''
                   .trim(),
               style: TextStyle(
